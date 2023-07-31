@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px
+  //10/16*100 = 62.5% , by default font size is 16px, making it as
+  // 10px to make calculation easy
+
+  //1rem=10px ||by default 16px, so 10/16*100 = 62.5%
+
+  @include respond(big-screen) {
+    //1rem = 12px        12/16*100
+    font-size: 75%;
+  }
+
+  @include respond(tab-land) {
+    //1rem = 9px         9/16*100
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    //1rem = 8px         8/16*100
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    //1rem = 6px         6/16*100
+    font-size: 37.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0rem;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
